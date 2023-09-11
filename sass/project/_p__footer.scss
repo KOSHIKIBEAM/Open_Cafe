@@ -1,0 +1,35 @@
+@use "../global" as global;
+
+.p__footer {
+
+    &-items {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-item {
+        padding-top: 45px;
+        width: 26px;
+        height: 26px;
+        color: #fff;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-block;
+
+            img {}
+        }
+
+    }
+
+    &-copylight {
+        font-size: 12px;
+        text-align: center;
+        color: global.$text-color-w;
+        padding: 40px 0 20px;
+    }
+}

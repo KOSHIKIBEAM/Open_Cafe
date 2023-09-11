@@ -1,0 +1,194 @@
+@use "../global" as global;
+
+.p__page-contact {
+
+    &-ttl {
+        font-size: 28px;
+        text-align: center;
+        padding-bottom: 30px;
+        font-weight: 700;
+    }
+
+    &-form {
+        p {
+            text-align: left;
+        }
+    }
+
+    &-list {
+
+        @include global.mq('pc') {
+            margin-top: 85px;
+        }
+    }
+
+    &-item {
+
+        @include global.mq('pc') {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        &-ttl {
+
+            @include global.mq('tab') {
+                padding-bottom: 10px;
+
+                &:first-child {
+                    padding-bottom: 20px;
+                }
+            }
+
+            @include global.mq('sp') {
+                padding-bottom: 10px;
+
+                &:first-child {
+                    padding-bottom: 20px;
+                }
+            }
+
+            text-align: left;
+            flex: 0 0 200px;
+            font-weight: 700;
+            padding-top: 20px;
+
+            &-inline {
+                font-size: 11px;
+                padding: 4px 6px;
+                margin-left: 4px;
+                color: #fff;
+                background: global.$accent-color1;
+                border-radius: 2px;
+            }
+        }
+
+        &-input {
+            width: 100%;
+
+            input {
+                padding: 10px;
+                width: 100%;
+                height: 50px;
+                border-radius: 6px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 240px;
+                border-radius: 6px;
+                padding: 10px;
+            }
+        }
+
+        .p__page-contact-radio-wrap {
+            display: flex;
+            flex-direction: column;
+
+            .p__page-contact-radio {
+                padding-bottom: 15px;
+
+                input:checked+span::after {
+                    content: '';
+                    display: block;
+                    border-radius: 50%;
+                    width: 12px;
+                    height: 12px;
+                    background-color: global.$accent-color1;
+                    position: absolute;
+                    left: 6px;
+                }
+
+                &-input {
+                    appearance: none;
+                    position: absolute;
+                    display: none;
+                }
+
+                &-part {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        border: 1px solid global.$main-color1;
+                        background: #fff;
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .wpcf7-form-control-wrap {
+
+        .wpcf7-radio {
+            display: flex;
+            flex-direction: column;
+
+            span {}
+        }
+    }
+
+    .wpcf7-list-item {
+        margin: 0;
+        padding-bottom: 15px;
+
+        input:checked+span::after {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: global.$accent-color1;
+            position: absolute;
+            left: 6px;
+        }
+
+        label {
+            input {
+                appearance: none;
+                position: absolute;
+                display: none;
+            }
+
+            .wpcf7-list-item-label {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    border: 1px solid global.$main-color1;
+                    background: #fff;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+
+
+
+    &-footer {
+        &-txt {
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        &-submit {}
+    }
+
+    &-btn {}
+
+    &-message {
+        &-error {}
+    }
+}

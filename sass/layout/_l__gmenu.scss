@@ -1,0 +1,64 @@
+@use "../global" as global;
+
+.l__gmenu {
+    position: relative;
+
+    &::before {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/bg_coffee-leaves2.png)no-repeat center center / contain;
+        position: absolute;
+        top: -80px;
+        left: -30px;
+        width: 200px;
+        height: 180px;
+
+        @include global.mq('pc') {
+            width: 20%;
+            height: 280px;
+        }
+    }
+
+    &::after {
+        content: '';
+        background: #eae0d5;
+        width: 75%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        z-index: map-get(global.$layer, "default") - 2;
+        height: 3695px;
+
+        @include global.mq('pc') {
+            height: 3155px;
+        }
+    }
+
+    .l__section {
+        padding: 120px 0 80px;
+
+        @include global.mq('pc') {
+            margin-bottom: 160px;
+            padding: 150px 0 80px;
+        }
+    }
+
+    &-content {}
+}
+
+.l__gmanu-img-sp {
+    margin-top: 15px;
+    padding-left: 245px;
+}
+
+.l__gmanu-img-pc {
+    position: relative;
+
+    img {
+        position: absolute;
+        bottom: 43px;
+        right: 0;
+        width: 310px;
+        height: 307px;
+    }
+
+}

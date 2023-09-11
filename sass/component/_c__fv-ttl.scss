@@ -1,0 +1,34 @@
+@use "../global" as global;
+
+.c__fv-ttl {
+    color: global.$text-color-w;
+    text-align: center;
+    font-weight: bold;
+    z-index: map-get(global.$layer, "header") + 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__en {
+        font-family: "Amatic SC";
+        font-size: 32px;
+        letter-spacing: 4px;
+
+        @include global.mq('pc') {
+            font-size: 72px;
+            line-height: 1.2;
+        }
+    }
+
+    &__jp {
+        font-family: 'Noto Serif JP';
+        font-size: 12px;
+        padding-top: 7px;
+
+        @include global.mq('pc') {
+            font-size: 16px;
+            padding-top: 12px;
+        }
+    }
+}

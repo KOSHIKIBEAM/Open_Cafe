@@ -1,0 +1,30 @@
+@use "../global" as global;
+
+.c__heading {
+    color: global.$text-color;
+    text-align: center;
+    font-weight: bold;
+
+    &__en {
+        font-family: "Amatic SC";
+        font-size: 40px;
+        letter-spacing: 4px;
+
+        @include global.mq('pc') {
+            font-size: 60px;
+            line-height: 1.2;
+            letter-spacing: 8px;
+        }
+    }
+
+    &__jp {
+        font-family: 'Noto Serif JP';
+        font-size: 12px;
+        padding-top: 0px;
+
+        @include global.mq('pc') {
+            font-size: 14px;
+            padding-top: 12px;
+        }
+    }
+}

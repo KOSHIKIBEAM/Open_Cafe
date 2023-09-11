@@ -1,0 +1,13 @@
+@use "../global" as global;
+
+.l__single {
+    .l__section {
+        @include global.mq('sp') {
+            padding-top: 75px;
+        }
+    }
+
+    .l__inner {
+        max-width: 870px;
+    }
+}

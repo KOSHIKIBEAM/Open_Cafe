@@ -1,0 +1,189 @@
+@use "../global" as global;
+
+.p__spmenu {
+    background: #fff;
+    margin-top: 60px;
+
+    &-top {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        @include global.mq('pc') {
+            margin-bottom: 25px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 78%;
+            height: 46px;
+            top: -20px;
+            text-align: center;
+            background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/05/img_ribbon-text_sp.png)no-repeat center center / contain;
+            right: 50%;
+            transform: translateX(50%);
+
+            @include global.mq('pc') {
+                top: -86px;
+            }
+        }
+    }
+
+    &-pasta {
+
+        @include global.mq('pc') {
+            width: calc(25% - 20px * 3 / 4);
+            margin: 0px 20px 20px 0;
+
+            &:nth-child(2n) {
+                margin-top: 40px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+        }
+
+        @include global.mq('tab') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 40px 20px 20px 0;
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 20px;
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('sp') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 40px 20px 20px 0;
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 20px;
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        &-img {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-body {
+            display: flex;
+            margin-top: 8px;
+        }
+
+        &-alpha {
+
+            @include global.mq('pc') {
+                width: 48px;
+                height: 48px;
+                flex: 0 0 48px;
+                font-size: 26px;
+            }
+
+            width: 24px;
+            height: 24px;
+            background: #222;
+            font-size: 19px;
+            font-family: "Patua One";
+            color: #fff;
+            flex: 0 0 24px;
+            margin-right: 8px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-name {
+            @include global.mq('pc') {
+                font-size: 18px;
+            }
+
+            font-size: 14px;
+            text-align: left;
+            font-family: "Noto Serif JP";
+        }
+    }
+
+
+    &-lunchset {
+        background: #f7f6f4;
+        border-radius: 8px;
+        padding: 20px;
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 70px;
+        }
+
+        &-img {
+
+            @include global.mq('sp') {
+                width: 100%;
+            }
+
+            @include global.mq('tab') {
+                width: 100%;
+            }
+        }
+
+        &-body {
+            text-align: center;
+            font-weight: bold;
+
+            @include global.mq('pc') {}
+        }
+
+        &-txt {
+            font-size: 16px;
+            font-family: global.$ff-awesome;
+
+            @include global.mq('pc') {
+                text-align: right;
+                font-size: 20px;
+            }
+        }
+
+        &-price {
+            font-size: 40px;
+            padding-bottom: 15px;
+            font-family: global.$ff-Damion;
+
+            @include global.mq('pc') {
+                font-size: 60px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                border: dotted 4px global.$text-color;
+                font-family: global.$ff-Damion;
+            }
+        }
+
+        &-date {
+            font-size: 12px;
+
+            @include global.mq('pc') {
+                font-size: 14px;
+            }
+        }
+    }
+}

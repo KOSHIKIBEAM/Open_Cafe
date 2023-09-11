@@ -1,0 +1,119 @@
+@use "../global" as global;
+
+.p__picup {
+
+    &-img-wrapper {}
+
+    &-tag {
+        background: global.$btn-color;
+        color: global.$text-color-w;
+        font-size: 12px;
+        text-align: left;
+        padding: 5px 10px;
+        min-width: 72px;
+        display: inline-block;
+        position: absolute;
+        left: -10px;
+        top: 10px;
+        z-index: map-get(global.$layer, "default") + 1;
+
+        &::before,
+        &::after {}
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            border: none;
+            border-bottom: solid 5px transparent;
+            border-right: solid 10px #aaa;
+
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: 1;
+            top: 0;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-width: 14px 8px 15px 0;
+            border-color: #222 transparent #222 #222;
+            border-style: solid;
+        }
+    }
+
+    &-img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        transition: opacity .3s;
+        flex-shrink: 0;
+        height: 0;
+        padding-top: 100%;
+        position: relative;
+        width: 100px;
+
+        @include global.mq('pc') {
+            height: 120px;
+            width: 120px;
+            padding-top: 38.46154%;
+        }
+
+        img {
+            display: block;
+            font-family: "object-fit:cover;object-position:50% 50%";
+            height: 100%;
+            left: 0;
+            object-fit: cover;
+            object-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    &-body {
+        @include global.mq('pc') {
+            width: calc(100% - 120px);
+        }
+
+        margin-left: 15px;
+        width: calc(100% - 100px);
+        text-align: left;
+        color: global.$text-color;
+
+        &::after {
+            content: '';
+            background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/1791a1faf0af79a835ee6f19fc9a4000.png)no-repeat center center/cover;
+            z-index: 1;
+            width: 125px;
+            height: 85px;
+            position: absolute;
+            top: -56px;
+            right: 10px;
+
+            @include global.mq('pc') {
+                width: 160px;
+                height: 110px;
+                top: -78px;
+                position: absolute;
+                right: 4px;
+            }
+        }
+    }
+
+    &-date {
+        font-size: 12px;
+    }
+
+
+    &-txt {
+        @include global.mq('pc') {
+            font-size: 14px;
+        }
+
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,216 @@
+@use "../global" as global;
+
+
+// ハンバーガーアイコン
+$drawer-bar-space: 4.5px;
+$drawer-bar-width: 27px;
+$drawer-bar-height: 2.25px;
+$drawer-content-width: 200px;
+
+.p__drawer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    background: global.$main-color1;
+    border-radius: 50%;
+    z-index: map-get(global.$layer, "drawer") + 2;
+    cursor: pointer;
+    transition: opacity .3s;
+
+    @include global.mq('pc') {
+        top: 20px;
+        right: 20px;
+    }
+
+    span {
+        width: $drawer-bar-width;
+        height: $drawer-bar-height;
+        background: #fff;
+        border-radius: 100px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .5s;
+        top: 50%;
+
+        &:nth-child(1) {
+            top: calc(50% - $drawer-bar-space - $drawer-bar-height * 3 / 2);
+        }
+
+        &:nth-child(2) {}
+
+        &:nth-child(3) {
+            top: calc(50% + $drawer-bar-space + $drawer-bar-height * 3 / 2);
+        }
+    }
+
+    &.active {
+        background: #fff;
+
+        span {
+            width: $drawer-bar-width;
+            height: $drawer-bar-height;
+            background: global.$main-color1;
+            border-radius: 100px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+            top: 50%;
+
+            &:nth-of-type(1) {
+                transition: 0.5s ease-out;
+                transform: translate(-13px, -2px)rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            &:nth-of-type(3) {
+                transition: 0.5s ease-out;
+                transform: translate(-13px, -2px)rotate(-45deg);
+            }
+        }
+    }
+
+    &-background {
+        display: none;
+        background: #000;
+        z-index: map-get(global.$layer, "drawer") - 1;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s ease 0s;
+
+        &.is-checked {
+            display: block;
+            opacity: 0.3;
+        }
+    }
+
+
+    &-content {
+
+        @include global.mq('pc') {
+            height: 100vh;
+
+        }
+
+        @include global.mq('sp') {
+            width: 100%;
+        }
+
+        height: 100vh;
+        z-index: map-get(global.$layer, "drawer");
+        width: 375px;
+        background: global.$main-color1;
+        color: #fff;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: right .5s,
+        opacity .5s;
+        pointer-events: none;
+        right: 0;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .p__drawer-logo {
+            width: 120px;
+            padding: 10px 10px 0;
+
+            &-link {
+
+                img {}
+            }
+        }
+
+        nav {
+            padding: 40px 30px;
+
+            @include global.mq('pc') {
+                padding: 60px 30px 152px;
+            }
+
+            @include global.mq('tab') {
+                padding: 60px 30px 152px;
+            }
+
+            .p__drawer-menu {
+                list-style: none;
+
+                li {
+                    display: flex;
+                    justify-content: left;
+                    align-items: flex-end;
+                    margin-bottom: 25px;
+
+                    @include global.mq('pc') {
+                        margin-bottom: 35px;
+
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        font-size: 24px;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            right: -25px;
+                            bottom: 14px;
+                            display: block;
+                            width: 15px;
+                            height: 1px;
+                            background: #fff;
+                            transform: rotate(-45deg);
+                        }
+
+                        span {
+                            font-size: 10px;
+                            padding-left: 35px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &-sns {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            @include global.mq('pc') {
+                margin-top: 56px;
+
+            }
+
+
+            a {
+                width: 40px;
+                margin-right: 20px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                img {}
+            }
+        }
+    }
+}

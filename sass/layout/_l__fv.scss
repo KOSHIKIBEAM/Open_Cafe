@@ -1,0 +1,50 @@
+@use "../global" as global;
+
+.l__fv {
+    z-index: map-get(global.$layer, "header");
+    position: relative;
+    width: 100%;
+
+    @include global.mq('pc') {
+        height: 320px;
+    }
+
+    @include global.mq('tab') {
+        height: 220px;
+    }
+
+    height: 120px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: map-get(global.$layer, "header") + 1;
+    }
+
+    &::before {
+        content: '';
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border: solid 1px #fff;
+
+        @include global.mq('pc') {
+            width: calc(100% - 32px);
+            height: calc(100% - 32px);
+        }
+    }
+
+    &::after {
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border: solid 2px #fff;
+
+        @include global.mq('pc') {
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+        }
+    }
+}

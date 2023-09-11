@@ -1,0 +1,17 @@
+@use "../global" as global;
+
+.l__shop {
+    position: relative;
+
+    .l__inner {
+        @include global.mq('pc') {
+            max-width: 670px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .l__section {
+        padding-bottom: 80px;
+    }
+}

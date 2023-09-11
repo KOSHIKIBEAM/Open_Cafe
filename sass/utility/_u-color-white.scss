@@ -1,0 +1,5 @@
+@use "../global" as global;
+
+.u-color-white {
+    color: global.$text-color-w;
+}

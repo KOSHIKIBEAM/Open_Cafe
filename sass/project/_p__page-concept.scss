@@ -1,0 +1,147 @@
+@use "../global" as global;
+
+.bg-1,
+.bg-2,
+.bg-3 {
+    .l__inner {}
+
+    .l__section {
+        @include global.mq('sp') {
+            padding-bottom: 0;
+        }
+    }
+
+    .p__page-concept {
+        z-index: map-get(global.$layer, "default") + 1;
+
+        @include global.mq('pc') {
+            display: flex;
+            align-items: center;
+        }
+
+        &-item {
+            text-align: left;
+            color: global.$text-color;
+        }
+
+        &-ttl {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 2;
+
+            @include global.mq('pc') {
+                font-size: 28px;
+            }
+        }
+
+        &-txt {
+            margin-top: 40px;
+            margin-bottom: 46px;
+            line-height: 2;
+
+            @include global.mq('sp') {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.bg-1 {
+    .l__section {}
+
+    .p__page-concept {
+        &-item {
+            @include global.mq('pc') {
+                margin-right: 5%;
+            }
+        }
+
+        &-img {
+            min-width: 100%;
+
+            @include global.mq('pc') {
+                min-width: 630px;
+            }
+
+            img {}
+        }
+
+        &-ttl {}
+
+        &-txt {}
+    }
+}
+
+.bg-2 {
+    .l__section {
+        @include global.mq('pc') {
+            padding-top: 65px;
+        }
+
+        padding-top: 53px;
+    }
+
+    .l__inner {}
+
+    .p__page-concept {
+        &-item {
+            padding-top: 30px;
+
+            @include global.mq('pc') {
+                margin-right: 0;
+                margin-left: 7%;
+            }
+        }
+
+        &-img {
+            min-width: 100%;
+
+            @include global.mq('pc') {
+                min-width: 58%;
+                width: 647px;
+            }
+
+            img {}
+        }
+
+        &-ttl {
+            padding-top: 37px;
+        }
+
+        &-txt {}
+    }
+}
+
+.bg-3 {
+    .l__section {
+        @include global.mq('pc') {
+            padding-top: 75px;
+        }
+    }
+
+    .l__inner {}
+
+    .p__page-concept {
+        &-item {
+            @include global.mq('pc') {
+                padding-top: 30px;
+                margin-right: 5%;
+            }
+        }
+
+        &-img {
+            min-width: 100%;
+
+            @include global.mq('pc') {
+                min-width: 58%;
+                width: 647px;
+            }
+
+            img {}
+        }
+
+        &-ttl {}
+
+        &-txt {}
+    }
+}

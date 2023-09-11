@@ -1,0 +1,49 @@
+@use "../global" as global;
+
+.p__gallary {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+
+    @include global.mq('pc') {
+        padding-bottom: 40px;
+    }
+
+    &-item {
+        @include global.mq('sp') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 40px 20px 20px 0;
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 0px;
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('tab') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 40px 20px 20px 0;
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 0px;
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('pc') {
+            width: calc(25% - 24px * 3 / 4);
+            margin: 40px 24px 20px 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+    }
+}

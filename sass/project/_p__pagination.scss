@@ -1,0 +1,131 @@
+@use "../global" as global;
+
+// ブレイクポイント
+@mixin device-large {
+    @media (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin device-mid {
+    @media (min-width: 520px) {
+        @content;
+    }
+}
+
+// 色設定
+$txt-color: global.$main-color1;
+$border-color: global.$main-color1;
+$active-color: global.$main-color1;
+
+
+
+
+// .pagination {
+//     display: flex;
+//     justify-content: center;
+//     color: $txt-color;
+//     line-height: 1;
+//     margin: 0;
+//     padding: 2em 0;
+
+//     &__item {
+//         margin: 0 .28em;
+
+//         &--current {
+// background: $active-color;
+// color: #fff;
+// font-weight: bold;
+// border-color: $active-color;
+// @extend %pagination__btn;
+//         }
+
+//         a {
+//             @extend %pagination__btn;
+//         }
+//     }
+
+//     &__btn {
+//         &--prev {
+//             order: 1;
+//             @extend %pagination__btn;
+//         }
+
+//         &--next {
+//             order: 3;
+//             @extend %pagination__btn;
+//         }
+//     }
+
+//     &__list {
+//         order: 2;
+//         display: flex;
+//         list-style: none;
+//         margin: 0;
+//         padding: 0;
+//     }
+
+//     &__btn {
+//         &--prev {
+//             margin-right: 1.14em;
+//         }
+
+//         &--next {
+//             margin-left: 1.14em;
+//         }
+//     }
+// }
+
+.navigation {
+    justify-content: center;
+    color: $txt-color;
+    line-height: 1;
+    margin: 0;
+    padding: 2em 0;
+    display: flex;
+
+    .current {
+        background: global.$main-color1 !important;
+        color: #fff !important;
+        font-weight: bold !important;
+    }
+
+    .nav-links {
+        order: 2;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .page-numbers {
+            margin: 0 0.28em;
+            box-sizing: border-box;
+            display: block;
+            color: #382620;
+            text-decoration: none;
+            text-align: center;
+            background: #FFF;
+            border: 1px solid #382620;
+            border-radius: 1em;
+            min-width: 2em;
+            transition: all 0.2s;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            padding: calc(0.5em - 1px) 0.5em;
+            transition: all .2s;
+
+            &:hover {
+                color: #FFF;
+                background: $active-color;
+                border-color: $active-color;
+            }
+        }
+
+        .prev {
+            margin-right: 1.14em;
+        }
+
+        .next {
+            margin-left: 1.14em;
+        }
+    }
+}

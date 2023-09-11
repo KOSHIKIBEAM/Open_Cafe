@@ -1,0 +1,92 @@
+@use "../global" as global;
+
+.p__shop {
+    margin-top: 40px;
+
+    &-contents {
+        margin-bottom: 120px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-shopname {
+        font-size: 20px;
+        text-align: left;
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 20px;
+
+        @include global.mq('pc') {
+            font-size: 24px;
+        }
+
+        &::before {
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: global.$main-color1;
+        }
+    }
+
+    @include global.mq('pc') {
+
+        &-pc-left {
+            width: calc(50% - 40px * 1 / 2);
+            margin-right: 40px;
+        }
+
+        &-pc-right {
+            width: calc(50% - 40px * 1 / 2);
+        }
+
+    }
+
+    &-map {
+        position: relative;
+        width: 100%;
+        padding-top: calc(400 / 700 * 100%);
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+
+    &-info {
+        padding-top: 40px;
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+
+    &-body {
+        display: flex;
+        justify-content: start;
+        border-bottom: solid 1px #222;
+        padding: 15px 0;
+        font-size: 14px;
+        text-align: left;
+        align-items: center;
+    }
+
+    &-ttl {
+        width: 56px;
+        margin-right: 24px;
+    }
+
+    &-txt {
+        text-align: left;
+    }
+}

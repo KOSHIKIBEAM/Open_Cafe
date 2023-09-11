@@ -1,0 +1,34 @@
+@use "../global" as global;
+
+.p__thank {
+    .l__section {
+        padding-top: 160px;
+        padding-bottom: 160px;
+
+        @include global.mq('sp') {
+            padding-top: 120px;
+            padding-bottom: 160px;
+        }
+    }
+
+    .l__inner {
+        @include global.mq('pc') {
+            max-width: 880px;
+        }
+    }
+
+    &-ttl {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    &-txt {
+        font-size: 16px;
+        text-align: left;
+        margin-top: 26px;
+
+        @include global.mq('pc') {
+            margin-top: 26px;
+        }
+    }
+}

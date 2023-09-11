@@ -1,0 +1,68 @@
+@use "../global" as global;
+
+.l__gallary {
+    background: global.$main-color2;
+    position: relative;
+
+    @include global.mq('sp') {
+        &::before {
+            content: '';
+            background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/img_balloon-gallery.png)no-repeat center center / contain;
+            position: absolute;
+            top: -60px;
+            left: -22px;
+            width: 200px;
+            height: 108px;
+        }
+    }
+
+    &::after {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/bg_plate.png)no-repeat center center / contain;
+        position: absolute;
+        bottom: -137px;
+        left: -20px;
+        width: 150px;
+        height: 200px;
+
+        @include global.mq('pc') {
+            width: 350px;
+            height: 320px;
+            left: -80px;
+        }
+    }
+
+    .l__section {
+        padding-top: 80px;
+
+        @include global.mq('sp') {
+            padding-top: 60px;
+            padding-bottom: 100px;
+        }
+
+    }
+
+    .l__inner {
+        @include global.mq('sp') {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+    }
+
+    .c__heading {
+        @include global.mq('pc') {
+            position: relative;
+
+            &::before {
+                content: '';
+                background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/img_balloon-gallery.png)no-repeat center center / contain;
+                position: absolute;
+                top: -97px;
+                left: 202px;
+                width: 260px;
+                height: 148px;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use "../global" as global;
+
+.l__footer {
+    background: #382620;
+    z-index: map-get(global.$layer, "footer");
+    position: relative;
+
+    &::before {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/689623f99f5f3cb47a4a865317bdb227.png)no-repeat center center / contain;
+        position: absolute;
+        left: -30px;
+        width: 126px;
+        height: 113px;
+        bottom: 60px;
+
+        @include global.mq('pc') {
+            width: 322px;
+            height: 288px;
+            bottom: 0;
+        }
+    }
+}

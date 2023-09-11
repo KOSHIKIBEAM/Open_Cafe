@@ -1,0 +1,86 @@
+@use "../global" as global;
+
+.p__access {
+    margin-top: 29px;
+    position: relative;
+
+    &::before {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/img_balloon-access.png)no-repeat center center / contain;
+        position: absolute;
+        top: -281px;
+        left: 27px;
+        width: 236px;
+        height: 211px;
+
+        @include global.mq('sp') {
+            top: -247px;
+            left: -54px;
+            width: 204px;
+            height: 211px;
+        }
+    }
+
+
+    @include global.mq('pc') {
+
+        &-pc-left {
+            width: calc(50% - 40px * 1 / 2);
+            margin-right: 40px;
+        }
+
+        &-pc-right {
+            width: calc(50% - 40px * 1 / 2);
+        }
+
+    }
+
+    &-map {
+        position: relative;
+        width: 100%;
+        padding-top: 54.142857%;
+        border: solid 10px #fff;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+
+    &-info {
+        padding-top: 15px;
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 25px;
+        }
+    }
+
+    &-body {
+        display: flex;
+        justify-content: start;
+        border-bottom: solid 1px #222;
+        font-size: 14px;
+        text-align: left;
+        align-items: flex-start;
+        padding: 16px 0;
+
+        @include global.mq('pc') {
+            padding: 17px 0;
+        }
+    }
+
+    &-ttl {
+        width: 56px;
+        margin-right: 24px;
+    }
+
+    &-txt {
+        text-align: left;
+    }
+}

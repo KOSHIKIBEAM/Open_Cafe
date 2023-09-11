@@ -1,0 +1,19 @@
+@use "../global" as global;
+
+.u-pb-100-pc {
+    @include global.mq('pc') {
+        padding-bottom: 100px;
+    }
+}
+
+.u-pt-30-pc {
+    @include global.mq('pc') {
+        padding-top: 30px;
+    }
+}
+
+.u-pb-30-sp {
+    @include global.mq('sp') {
+        padding-bottom: 75px;
+    }
+}

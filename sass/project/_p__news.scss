@@ -1,0 +1,139 @@
+@use "../global" as global;
+
+.p__news {
+    padding-top: 34px;
+
+    @include global.mq('pc') {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    &-item-top {
+        padding-bottom: 20px;
+        position: relative;
+
+        @include global.mq('pc') {
+            width: calc(50% - 42px * 1 / 2);
+            margin-right: 42px;
+        }
+    }
+
+    &-img-wrapper {
+        position: relative;
+
+        &-top {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-tag-top,
+    &-tag {
+        background: global.$btn-color;
+        color: global.$text-color-w;
+        font-size: 12px;
+        text-align: left;
+        padding: 5px 10px;
+        min-width: 72px;
+        display: inline-block;
+        position: absolute;
+        left: -10px;
+        z-index: map-get(global.$layer, "default") + 1;
+        top: 10px;
+
+        &::before,
+        &::after {}
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            border: none;
+            border-bottom: solid 5px transparent;
+            border-right: solid 10px #aaa;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: 1;
+            top: 0;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-width: 14px 8px 15px 0;
+            border-color: #222 transparent #222 #222;
+            border-style: solid;
+        }
+    }
+
+    &-img {
+        &-top {}
+    }
+
+    &-body {
+        font-size: 12px;
+        text-align: left;
+        font-family: "Noto Serif JP";
+
+        &-top {}
+    }
+
+    &-ttl {
+        margin: 8px 0;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.4;
+
+        &-top {
+            font-size: 20px;
+            margin: 12px 0;
+            font-weight: bold;
+        }
+    }
+
+    &-date {
+        &-top {}
+    }
+
+    &-txt {
+        margin-bottom: 8px;
+
+        &-top {
+            margin: 23px 0 25px;
+        }
+    }
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include global.mq('pc') {
+            width: calc(50% - 42px * 1 / 2);
+            margin-right: 0px;
+        }
+    }
+
+    &-item {
+        width: calc(50% - 42px * 1 / 2);
+        margin-right: 42px;
+        position: relative;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        &:not(:nth-child(-n+2)) {
+            margin-top: 20px;
+        }
+
+        @include global.mq('sp') {
+            &:nth-last-child(-n+2) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

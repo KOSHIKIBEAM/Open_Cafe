@@ -1,0 +1,17 @@
+@use "../global" as global;
+
+.l__drawer {
+    z-index: map-get(global.$layer, "drawer");
+
+    &-logo {
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+
+    &-items {
+        position: fixed;
+        top: 20px;
+        right: 0;
+    }
+}

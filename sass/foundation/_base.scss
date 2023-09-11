@@ -1,0 +1,36 @@
+@use "../global" as global;
+
+body {
+  color: global.$text-color;
+  font-family: global.$ff-base;
+  font-size: global.$fz-base;
+  font-weight: global.$fw-base;
+  line-height: global.$lh-base;
+  background: global.$main-color3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  // transition: opacity .3s;
+
+  // &:hover {
+  //   opacity: global.$hover-base;
+  // }
+}

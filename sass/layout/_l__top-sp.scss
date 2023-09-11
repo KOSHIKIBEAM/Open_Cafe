@@ -1,0 +1,16 @@
+@use "../global" as global;
+
+.l__top-sp {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: map-get(global.$layer, "default") + 2;
+
+    &-logo {}
+
+    &-link {
+        img {
+            width: 120px;
+        }
+    }
+}

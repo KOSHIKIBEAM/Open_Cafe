@@ -1,0 +1,79 @@
+@use "../global" as global;
+
+.l__page-concept {
+    padding-bottom: 175px;
+
+    @include global.mq('pc') {
+        padding-bottom: 60px;
+    }
+
+    .l__section {}
+
+    .l__inner {}
+
+}
+
+.bg-1 {
+    position: relative;
+
+    &::after {
+        height: 120px;
+        bottom: 75px;
+        content: '';
+        background: global.$main-color2;
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        width: 76.8%;
+        right: 0;
+
+        @include global.mq('pc') {
+            height: 200px;
+            bottom: 80px;
+        }
+    }
+}
+
+.bg-2 {
+    position: relative;
+
+    &::after {
+        content: '';
+        background: global.$main-color2;
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        width: 45.3%;
+        left: 0;
+        min-width: 284px;
+        height: 227px;
+        bottom: 50px;
+
+        @include global.mq('pc') {
+            height: 437px;
+        }
+
+        @include global.mq('sp') {
+            height: 207px;
+        }
+    }
+}
+
+.bg-3 {
+    position: relative;
+
+    &::after {
+        content: '';
+        background: global.$main-color2;
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        width: 31.2%;
+        min-width: 184px;
+        right: 20px;
+        bottom: 75px;
+        height: 280px;
+
+        @include global.mq('pc') {
+            height: 400px;
+            bottom: 100px;
+        }
+    }
+}

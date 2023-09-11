@@ -1,0 +1,164 @@
+@use "../global" as global;
+
+.p__related-article {
+
+    &-ttl {
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 40px;
+        text-align: center;
+
+        @include global.mq('pc') {
+            font-size: 28px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    &-item {
+        position: relative;
+
+        @include global.mq('tab') {
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('sp') {
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('pc') {
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('pc') {
+            width: calc(100% / 3 - 32px * 2 / 3);
+            margin-right: 32px;
+
+            &:nth-last-child(-n+3) {
+                margin-bottom: 32px;
+            }
+
+            &:not(:nth-child(-n+3)) {
+                margin-top: 32px;
+            }
+        }
+
+        @include global.mq('tab') {
+            width: calc(50% - 20px * 1 / 2);
+            margin-right: 20px;
+
+            &:nth-last-child(-n+2) {
+                margin-bottom: 20px;
+            }
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 20px;
+            }
+        }
+
+        @include global.mq('sp') {
+            width: calc(50% - 10px * 1 / 2);
+            margin-right: 10px;
+
+            &:nth-last-child(-n+2) {
+                margin-bottom: 10px;
+            }
+
+            &:not(:nth-child(-n+2)) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+
+    &-img-wrapper {
+        position: relative;
+
+        &-top {
+            position: relative;
+        }
+    }
+
+    &-tag-top,
+    &-tag {
+        background: global.$btn-color;
+        color: global.$text-color-w;
+        font-size: 12px;
+        text-align: left;
+        padding: 5px 10px;
+        min-width: 72px;
+        display: inline-block;
+        position: absolute;
+        left: -10px;
+        top: 10px;
+        z-index: map-get(global.$layer, "default") + 1;
+
+        &::before,
+        &::after {}
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            border: none;
+            border-bottom: solid 5px transparent;
+            border-right: solid 10px #aaa;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: 1;
+            top: 0;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-width: 14px 8px 15px 0;
+            border-color: #222 transparent #222 #222;
+            border-style: solid;
+        }
+    }
+
+    &-img {
+        &-top {}
+    }
+
+    &-body {
+        font-size: 12px;
+        text-align: left;
+        font-family: "Noto Serif JP";
+
+        &-top {}
+    }
+
+    &-date {
+        &-top {}
+    }
+
+    &-txt {
+        margin-bottom: 8px;
+        font-size: 12px;
+
+        @include global.mq('pc') {
+            font-size: 14px;
+        }
+
+        &-top {
+            margin: 23px 0 25px;
+        }
+    }
+
+}

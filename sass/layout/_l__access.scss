@@ -1,0 +1,35 @@
+@use "../global" as global;
+
+.l__access {
+    background: global.$main-color2;
+    position: relative;
+
+    &::before {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/bg_bread.png)no-repeat center center / contain;
+        position: absolute;
+        right: 0;
+        width: 188px;
+        height: 180px;
+        top: -103px;
+
+        @include global.mq('pc') {
+            width: 378px;
+            height: 350px;
+            top: -127px;
+        }
+    }
+
+
+    .l__inner {
+        @include global.mq('pc') {
+            max-width: 670px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .l__section {
+        padding-bottom: 80px;
+    }
+}

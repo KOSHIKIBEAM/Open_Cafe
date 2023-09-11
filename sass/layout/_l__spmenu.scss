@@ -1,0 +1,45 @@
+@use "../global" as global;
+
+.l__spmenu {
+    background: global.$main-color2;
+    padding: 60px 0;
+    position: relative;
+
+    @include global.mq('pc') {
+        padding: 80px 50px 80px;
+    }
+
+    @include global.mq('sp') {
+
+        &::before {
+            content: '';
+            background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/05/img_balloon-special-lunch-set.png)no-repeat center center / contain;
+            position: absolute;
+            top: -70px;
+            right: 0;
+            width: 188px;
+            height: 180px;
+        }
+    }
+
+
+
+    .l__section {
+        padding: 0px 20px 20px;
+
+        @include global.mq('pc') {
+            padding: 55px 40px 40px;
+            position: relative;
+
+            &::before {
+                content: '';
+                background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/img_balloon-special-lunch-set.png)no-repeat center center / contain;
+                position: absolute;
+                top: -78px;
+                right: -36px;
+                width: 330px;
+                height: 160px;
+            }
+        }
+    }
+}

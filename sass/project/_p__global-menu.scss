@@ -1,0 +1,31 @@
+@use "../global" as global;
+
+.p__global-menu {
+    display: block;
+
+    li {
+        padding-bottom: 30px;
+
+        a {
+            transition: opacity .3s;
+            display: block;
+            color: global.$text-color;
+            font-weight: 400;
+            font-family: 'Patua One',
+                sans-serif;
+
+            span {
+                font-size: 10px;
+                display: block;
+            }
+
+            &:hover {
+                opacity: global.$hover-base;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 0px;
+        }
+    }
+}

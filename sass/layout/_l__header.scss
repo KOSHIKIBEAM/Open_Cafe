@@ -1,0 +1,7 @@
+@use "../global" as global;
+
+.l__header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}

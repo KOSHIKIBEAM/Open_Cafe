@@ -1,0 +1,8 @@
+<svg id="img_ribbon-text" xmlns="http://www.w3.org/2000/svg" width="350" height="44" viewBox="0 0 350 44">
+  <g id="グループ_424" data-name="グループ 424" transform="translate(-473 -2107)">
+    <rect id="長方形_23093" data-name="長方形 23093" width="308.084" height="37.4" transform="translate(493.958 2107)" fill="#222"/>
+    <path id="パス_39635" data-name="パス 39635" d="M0,0H34.581V37.4H0L10.479,18.425Z" transform="translate(473 2113.6)" fill="#222"/>
+    <path id="パス_39636" data-name="パス 39636" d="M34.581,0H0V37.4H34.581L24.1,18.425Z" transform="translate(788.419 2113.6)" fill="#222"/>
+  </g>
+  <text id="お好きなパスタをお選びください" transform="translate(40 25)" fill="#fff" font-size="18" font-family="NotoSerifJP-Bold, Noto Serif JP" font-weight="700"><tspan x="0" y="0">お</tspan><tspan y="0">好</tspan><tspan y="0">きなパスタをお</tspan><tspan y="0">選</tspan><tspan y="0">びください</tspan></text>
+</svg>

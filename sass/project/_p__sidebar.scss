@@ -1,0 +1,172 @@
+@use "../global" as global;
+
+.p__sidebar {
+    width: 100%;
+    position: relative;
+
+    @include global.mq('pc') {
+        margin-left: 72px;
+    }
+
+    &-contents {
+
+        @include global.mq('pc') {
+            width: 300px;
+        }
+
+        margin: 0 auto;
+        width: 350px;
+        background-color: #fff;
+        margin-bottom: 65px;
+        padding: 25px 20px;
+    }
+
+    .wp-block-heading {
+        padding-bottom: 45px;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 32px;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #222;
+        }
+    }
+}
+
+.p__sidebar-picup {
+
+    &-img-wrapper {}
+
+    &-img {
+        width: 100px;
+        height: 100px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transition: opacity .3s;
+
+        @include global.mq('pc') {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.cat-item {
+    margin-bottom: 5px;
+    padding-left: 15px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-size: 100% auto;
+            background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/05/arrow.png) no-repeat center center / contain;
+            position: absolute;
+            z-index: map-get(global.$layer, "default") + 1;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: -15px;
+            transform: translateY(-50%);
+        }
+
+    }
+}
+
+
+
+.rpwe-li {
+    z-index: map-get(global.$layer, "default")+2;
+    box-sizing: border-box;
+    width: auto;
+    padding: 0px 0px 20px;
+    position: relative;
+}
+
+.rpwe-block ul {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.rpwe-block li {
+    margin: 0 0 8px !important;
+    padding: 0px 0 10px 5px !important;
+    list-style-type: none !important;
+    display: block;
+}
+
+.rpwe-block a {
+    display: inline !important;
+    text-decoration: none;
+}
+
+.rpwe-block h3 {
+    background: none !important;
+    clear: none;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 1.5em;
+}
+
+.rpwe-thumb {
+    margin: 2px 15px 2px 0 !important;
+}
+
+.rpwe-summary {
+    @include global.mq('pc') {
+        font-size: 14px;
+    }
+
+    font-size: 12px;
+}
+
+.rpwe-time {
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.rpwe-comment {
+    color: #bbb;
+    font-size: 11px;
+    padding-left: 5px;
+}
+
+.rpwe-alignleft {
+    display: inline;
+    float: left;
+}
+
+.rpwe-alignright {
+    display: inline;
+    float: right;
+}
+
+.rpwe-aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rpwe-clearfix:before,
+.rpwe-clearfix:after {
+    content: "";
+    display: table !important;
+}
+
+.rpwe-clearfix:after {
+    clear: both;
+}

@@ -1,0 +1,248 @@
+@use "../global" as global;
+
+.p__single {
+    font-family: "Noto Serif JP", sans-serif;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin: 24px 0px 24px;
+
+        @include global.mq('pc') {
+            font-size: 28px;
+            margin: 24px 0px 40px;
+        }
+
+    }
+
+    h2 {
+        font-size: 18px;
+        padding-left: 18px;
+        position: relative;
+
+        @include global.mq('pc') {
+            font-size: 24px;
+            padding-left: 22px;
+        }
+
+        &::before {
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            background: global.$main-color1;
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+        padding-bottom: 13px;
+        border-bottom: solid 1px global.$main-color1;
+
+        @include global.mq('pc') {
+            font-size: 20px;
+        }
+    }
+
+    h4 {
+        font-size: 14px;
+
+        @include global.mq('pc') {
+            font-size: 16px;
+        }
+    }
+
+    &-thumbnail {
+        text-align: center;
+
+        img {}
+    }
+
+    &-body {}
+
+    &-ttl {}
+
+    &-txt {
+        @include global.mq('pc') {
+            font-size: 16px;
+        }
+
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .h1-text {
+        padding-bottom: 40px;
+        padding-top: 30px;
+    }
+
+    .h2-text {
+        padding-bottom: 55px;
+        padding-top: 17px;
+
+        @include global.mq('pc') {
+            padding-top: 12px;
+        }
+    }
+
+    .h3-text {
+        padding-top: 16px;
+        padding-bottom: 55px;
+    }
+
+    .h4-text {
+        padding-top: 38px;
+        padding-bottom: 27px;
+
+        @include global.mq('pc') {
+            padding-top: 12px;
+        }
+    }
+
+    &-date {
+        margin-bottom: 40px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &-img {
+        @include global.mq('sp') {
+            padding-bottom: 33px;
+        }
+    }
+
+    &-list {
+        list-style-type: disc !important;
+        padding-left: 40px;
+        padding-bottom: 32px;
+
+        li {
+            padding-bottom: 5px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &-bottom {
+        position: relative;
+    }
+
+    &-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+
+        @include global.mq('pc') {
+            margin-bottom: 120px;
+        }
+
+        &-prev,
+        &-next {
+            position: relative;
+            font-size: 14px;
+
+            @include global.mq('pc') {
+                font-size: 16px;
+            }
+
+            &::before {
+                content: '';
+                width: 9px;
+                height: 9px;
+                border-top: 1px solid global.$main-color1;
+                border-right: 1px solid global.$main-color1;
+                position: absolute;
+                top: 34%;
+            }
+        }
+
+        &-prev {
+            padding-left: 18px;
+
+            &::before {
+                content: '';
+                left: 1px;
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+            }
+        }
+
+        &-next {
+            padding-right: 18px;
+
+            &::before {
+                content: '';
+                right: 1px;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+
+        &-center {
+            text-align: center;
+            width: 112px;
+            padding: 6px 0;
+            border: solid 2px global.$main-color1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include global.mq('pc') {
+                padding: 11px 0;
+                width: 137px;
+            }
+        }
+    }
+
+    .wp-block-quote {
+        margin-bottom: 30px;
+        padding: 10px 24px 20px;
+        background: #fff;
+
+        @include global.mq('pc') {
+            padding: 38px 40px 40px;
+        }
+
+        p {
+            padding-bottom: 17px;
+            line-height: 2;
+            display: block;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+
+            @include global.mq('sp') {
+                font-size: 14px;
+                padding-bottom: 22px;
+            }
+        }
+    }
+
+    cite {
+        text-align: right;
+        font-size: 12px;
+        display: inline-block;
+        width: 100%;
+
+        @include global.mq('sp') {
+            padding-right: 21px;
+            font-size: 13px;
+        }
+
+    }
+}

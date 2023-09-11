@@ -1,0 +1,168 @@
+@use "../global" as global;
+
+.p__gmenu {
+
+    &-ttl {
+        font-size: 20px;
+        font-family: "Noto Serif JP";
+        font-weight: bold;
+
+        @include global.mq('pc') {
+            font-size: 24px;
+        }
+    }
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include global.mq('pc') {
+            margin-bottom: 83px;
+        }
+    }
+
+    &-item {
+
+        @include global.mq('sp') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 20px 20px 20px 0;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('tab') {
+            width: calc(50% - 20px * 1 / 2);
+            margin: 20px 20px 20px 0;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('pc') {
+            width: calc(100% / 3 - 45px * 2 / 3);
+            margin: 10px 45px 20px 0;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &-img {
+        border: 6px solid #fff;
+    }
+
+    &-body {
+        display: block;
+        text-align: left;
+        margin-top: 10px;
+
+    }
+
+    &-menutxt {
+        font-size: 14px;
+        font-family: "Noto Serif JP";
+        font-weight: bold;
+
+        @include global.mq('pc') {
+            font-size: 20px;
+        }
+    }
+
+    &-price {
+        font-size: 24px;
+        font-family: global.$ff-Damion;
+
+        @include global.mq('pc') {
+            font-size: 32px;
+        }
+    }
+}
+
+.p__gmenu-drink {
+    padding: 0 20px 20px;
+    font-family: "Noto Serif JP";
+
+    @include global.mq('pc') {
+        padding: 0 0px 72px;
+    }
+
+    &-sp {
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 343px;
+                height: 343px;
+            }
+        }
+    }
+
+    &-items {
+        @include global.mq('pc') {
+            justify-content: space-between;
+            display: flex;
+            width: 100%;
+            margin-left: 58px;
+            max-width: 680px;
+        }
+    }
+
+    &-item {
+
+        @include global.mq('pc') {
+            width: calc(100% / 3 - 48px * 2 / 3);
+            margin: 0px 48px 20px 0;
+
+            &:last-child {
+                margin: 0px 0px 20px 0;
+            }
+        }
+    }
+
+
+
+    &-ttl {
+        font-size: 16px;
+        position: relative;
+        padding: 20px 0 12px;
+        border-bottom: solid 1px #222;
+        margin-bottom: 8px;
+
+        @include global.mq('sp') {
+            margin-bottom: 15px;
+
+            &:first-child {
+                padding: 0px 0 12px;
+            }
+        }
+    }
+
+
+    &-body {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        padding-bottom: 3px;
+
+        &:last-child {
+            padding-bottom: 30px;
+
+            @include global.mq('pc') {
+                padding-bottom: 0px;
+            }
+        }
+    }
+
+    &-txt {}
+
+    &-price {
+        @include global.mq('pc') {
+            font-size: 20px;
+        }
+    }
+}

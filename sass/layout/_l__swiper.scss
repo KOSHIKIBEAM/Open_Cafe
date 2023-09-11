@@ -1,0 +1,172 @@
+@use "../global" as global;
+
+.l__swiper {
+    position: relative;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+
+    @include global.mq('pc') {
+        height: 735px;
+        max-height: 735px;
+        width: calc(100% - 200px);
+
+        &::before {
+            content: '';
+            background: global.$main-color2;
+            width: 91%;
+            height: 398px;
+            position: absolute;
+            bottom: -35px;
+            right: 0;
+        }
+    }
+
+    &-txt {
+        color: #fff;
+        z-index: map-get(global.$layer, "default")+2;
+        letter-spacing: 2.8px;
+        text-align: left;
+        font-weight: global.$fw-base * 1.4;
+        line-height: 2;
+        position: absolute;
+        left: 60px;
+        bottom: 65%;
+
+        @include global.mq('pc') {
+            position: absolute;
+            bottom: 56px;
+            left: 60px;
+        }
+    }
+
+    &-txt__wrapper {}
+
+    &-txt__ttl {
+
+        font-family: global.$ff-awesome;
+        font-size: 16px;
+
+        @include global.mq('pc') {
+            font-size: 20px;
+        }
+    }
+
+    &-picup {
+
+        @include global.mq('pc') {
+            width: 388px;
+            right: 0px;
+            justify-content: space-between;
+            display: inline-flex;
+            bottom: 20px;
+        }
+
+        position: absolute;
+        bottom: 40px;
+        justify-content: space-between;
+        display: inline-flex;
+        z-index: map-get(global.$layer, "default")+2;
+        padding: 15px;
+        opacity: 0.85;
+        background-color: #fff;
+        box-sizing: border-box;
+        margin: 20px 20px 0px 20px;
+        width: auto;
+    }
+
+}
+
+.swiper {
+    height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+
+    @include global.mq('pc') {
+        height: 735px;
+        max-height: 735px;
+    }
+}
+
+.swiper-pagination {
+    text-align: left;
+    margin-left: 20px;
+    z-index: map-get(global.$layer, "default") + 1;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-right: 15px;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #d59b71;
+}
+
+@-webkit-keyframes zoomUp {
+
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    100% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+
+}
+
+@keyframes zoomUp {
+
+    /* 1.15倍させる指定 */
+
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    100% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+
+}
+
+.swiper-slide {
+    z-index: map-get(global.$layer, "default");
+    -webkit-animation: zoomUp 12s linear 0s;
+    -webkit-animation-fill-mode: both;
+    animation: zoomUp 12s linear 0s;
+    animation-fill-mode: both;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        display: block;
+        overflow: hidden;
+
+        @include global.mq('pc') {
+            height: 735px;
+            max-height: 735px;
+        }
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-scrollbar {
+    display: none;
+}

@@ -1,0 +1,16 @@
+@use "../global" as global;
+
+.l__news {
+
+    .l__inner {
+        @include global.mq('pc') {
+            max-width: 1275px;
+        }
+    }
+
+    .l__section {
+        @include global.mq('pc') {
+            padding-top: 80px;
+        }
+    }
+}

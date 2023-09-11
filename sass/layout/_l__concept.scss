@@ -1,0 +1,66 @@
+@use "../global" as global;
+
+.l__concept {
+    position: relative;
+
+    .l__section {
+        padding: 120px 0 0px;
+
+        @include global.mq('pc') {
+            padding: 120px 0 340px;
+        }
+    }
+
+    .l__inner {
+        @include global.mq('pc') {
+            padding-right: 90px;
+            display: flex;
+            padding-left: 0;
+            position: relative;
+
+            &::before {
+                content: '';
+                background: #eae0d5;
+                height: 300px;
+                width: 92%;
+                position: absolute;
+                bottom: -60px;
+                left: 0px;
+                z-index: map-get(global.$layer, "default") - 2;
+            }
+
+        }
+
+        .concept-img-pc {
+            width: 592px;
+            height: 825px;
+            margin-right: 79px;
+        }
+    }
+
+    &::before {
+        content: '';
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/b5c09485c0c2ccdc735c471eb2d0a1b3.png)no-repeat center center/contain;
+        height: 130px;
+        width: 145px;
+        position: absolute;
+        top: -16px;
+        right: 0px;
+        z-index: map-get(global.$layer, "default") + 3;
+
+        @include global.mq('pc') {
+            height: 265px;
+            width: 295px;
+        }
+    }
+
+    &-items {
+        padding-top: 40px;
+
+        @include global.mq('pc') {
+            text-align: left;
+            padding-top: 80px;
+            max-width: 470px;
+        }
+    }
+}

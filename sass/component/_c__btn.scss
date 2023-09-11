@@ -1,0 +1,62 @@
+@use "../global" as global;
+
+.c__btn {
+    background: global.$btn-color;
+    padding: 25px 65px;
+    text-align: center;
+    margin: 0 auto;
+    width: 290px;
+    position: relative;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translate(5px, 5px);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        background: url(http://koshikibeam.website/open_cafe/wp-content/uploads/2023/06/2b7b48d1333ca2889aec919e325ad950.png) no-repeat center center / contain;
+        width: 7px;
+        height: 15px;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 1px solid global.$btn-color;
+        border-right: 1px solid global.$btn-color;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: translate(-5px, -5px);
+        }
+    }
+
+    p {
+        position: relative;
+    }
+
+    .c__btn-link {
+        color: global.$text-color-w;
+        background: global.$btn-color;
+        border-style: none;
+        z-index: map-get(global.$layer, "default") + 2;
+        display: inline-block;
+    }
+
+    // .wpcf7-spinner {
+    //     display: none;
+    // }
+}
+
+.c__btn:hover:hover:after {
+    transform: translate(-5px, -5px);
+}
