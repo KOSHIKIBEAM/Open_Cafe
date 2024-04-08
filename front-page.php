@@ -14,7 +14,7 @@
                     <div class="p__concept">
                         <div class="p__concept-ttl">最高のコーヒーと、<br> 時の流れを味わうことができる<br> 手作りカフェ</div>
                         <div class="p__concept-txt-1">ダミー_国内外から賞賛を<br> 受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。 <br> ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。 <br> <br> ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</div>
-                        <a href="/concept" class="">
+                        <a href="/open_cafe/concept" class="">
                             <div class="c__btn">
                                 <span class="c__btn-link">詳しくはこちら</span>
                             </div>
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <a href="/menu" class="">
+            <a href="/open_cafe/menu" class="">
                 <div class="c__btn">
                     <span class="c__btn-link">詳しくはこちら</span>
                 </div>
@@ -306,7 +306,7 @@
                 <p class="c__heading__jp">お知らせ</p>
             </div>
             <div class="p__news">
-                <div class="p__news-item-top">
+                <a href="<?php the_permalink(); ?>" class="p__news-item-top">
                     <?php
                     $args = array(
                         'post_type' => 'post',
@@ -353,9 +353,9 @@
                         <!-- ループ後の閉じタグ -->
                     <?php endif;
                     wp_reset_postdata(); ?>
-                </div>
+                </a>
 
-                <div class="p__news-items">
+                <a href="<?php the_permalink(); ?>" class="p__news-items">
                     <?php
                     $args = array(
                         'post_type' => 'post',
@@ -390,15 +390,14 @@
                                     <div class="p__news-date"><?php the_time('Y/n/j'); ?></div>
                                 </div>
                             </div>
-
                         <?php endwhile; ?>
                         <!-- ループ後の閉じタグ -->
                     <?php endif;
                     wp_reset_postdata(); ?>
-                </div>
+                </a>
             </div>
 
-            <a href="/news" class="">
+            <a href="/open_cafe/news" class="">
                 <div class="c__btn">
                     <span class="c__btn-link">過去のお知らせ</span>
                 </div>

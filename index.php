@@ -14,7 +14,7 @@
                     <div class="p__concept">
                         <div class="p__concept-ttl">最高のコーヒーと、<br> 時の流れを味わうことができる<br> 手作りカフェ</div>
                         <div class="p__concept-txt-1">ダミー_国内外から賞賛を<br> 受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。 <br> ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。 <br> <br> ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</div>
-                        <a href="/concept" class="">
+                        <a href="/open_cafe/concept" class="">
                             <div class="c__btn">
                                 <span class="c__btn-link">詳しくはこちら</span>
                             </div>
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <a href="/menu" class="">
+            <a href="/open_cafe/menu" class="">
                 <div class="c__btn">
                     <span class="c__btn-link">詳しくはこちら</span>
                 </div>
@@ -306,18 +306,18 @@
                 <p class="c__heading__jp">お知らせ</p>
             </div>
             <div class="p__news">
-                <div class="p__news-item-top">
-                    <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'posts_per_page' => 1,
-                        'no_found_rows' => true,  //ページャーを使う時はfalseに。
-                    );
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) :
-                    ?>
-                        <!-- ループ前の開始タグ -->
-                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 1,
+                    'no_found_rows' => true,  //ページャーを使う時はfalseに。
+                );
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()) :
+                ?>
+                    <!-- ループ前の開始タグ -->
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <a href="<?php the_permalink(); ?>" class="p__news-item-top">
 
                             <!-- 出力したい処理を記述 -->
                             <?php $category = get_the_category(); ?>
@@ -349,25 +349,25 @@
                                 </div>
                             </div>
 
-                        <?php endwhile; ?>
-                        <!-- ループ後の閉じタグ -->
-                    <?php endif;
-                    wp_reset_postdata(); ?>
-                </div>
+                        </a>
+                    <?php endwhile; ?>
+                    <!-- ループ後の閉じタグ -->
+                <?php endif;
+                wp_reset_postdata(); ?>
 
-                <div class="p__news-items">
-                    <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'posts_per_page' => 4,
-                        'offset' => 1,
-                        'no_found_rows' => true,  //ページャーを使う時はfalseに。
-                    );
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) :
-                    ?>
-                        <!-- ループ前の開始タグ -->
-                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 4,
+                    'offset' => 1,
+                    'no_found_rows' => true,  //ページャーを使う時はfalseに。
+                );
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()) :
+                ?>
+                    <!-- ループ前の開始タグ -->
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <a href="<?php the_permalink(); ?>" class="p__news-items">
                             <!-- 出力したい処理を記述 -->
                             <div class="p__news-item">
                                 <?php $category = get_the_category(); ?>
@@ -390,15 +390,14 @@
                                     <div class="p__news-date"><?php the_time('Y/n/j'); ?></div>
                                 </div>
                             </div>
-
-                        <?php endwhile; ?>
-                        <!-- ループ後の閉じタグ -->
-                    <?php endif;
-                    wp_reset_postdata(); ?>
-                </div>
+                        </a>
+                    <?php endwhile; ?>
+                    <!-- ループ後の閉じタグ -->
+                <?php endif;
+                wp_reset_postdata(); ?>
             </div>
 
-            <a href="/news" class="">
+            <a href="/open_cafe/news" class="">
                 <div class="c__btn">
                     <span class="c__btn-link">過去のお知らせ</span>
                 </div>

@@ -1,23 +1,23 @@
     <footer class="l__footer">
         <div class="p__pagetop">
-            <a href="">
+ <a>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/01/icon_arrow-top.png" alt="">
-            </a>
+               </a>
         </div>
         <div class="p__footer">
             <div class="p__footer-items">
                 <div class="p__footer-item">
-                    <a href="">
+                    <a href="https://twitter.com/home" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/01/icon_twitter-light.png" alt="">
                     </a>
                 </div>
                 <div class="p__footer-item">
-                    <a href="">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/01/icon_instagram-light.png" alt="">
                     </a>
                 </div>
                 <div class="p__footer-item">
-                    <a href="">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/01/icon_youtube-light.png" alt="">
                     </a>
                 </div>

@@ -1,38 +1,37 @@
 // 色
 $main-color1: #382620; // メインカラー1
-$main-color2: #EAE0D5; // ベースカラー（濃）
-$main-color3: #F3EFEB; // ベースカラー（薄）
-$accent-color1: #F07317; // アクセントカラー
+$main-color2: #eae0d5; // ベースカラー（濃）
+$main-color3: #f3efeb; // ベースカラー（薄）
+$accent-color1: #f07317; // アクセントカラー
 $accent-color2: #888888; // disable(ボタン)カラー
 $text-color: #222222; // テキストカラー
-$text-color-w: #FFFFFF; // テキストカラー
+$text-color-w: #ffffff; // テキストカラー
 $btn-color: #222222; // テキストカラー
 
-
 // フォント
-$ff-awesome: 'Noto Serif JP', sans-serif; // Font Awesome
-$ff-en: 'Amatic SC', 'Patua One', 'Damion', sans-serif; // 英字
-$ff-Damion: 'Damion', sans-serif; // 英字
-$ff-base: "Zen Kaku Gothic New", "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; // 日本語標準
+$ff-awesome: "Noto Serif JP", sans-serif; // Font Awesome
+$ff-en: "Amatic SC", "Patua One", "Damion", sans-serif; // 英字
+$ff-Damion: "Damion", sans-serif; // 英字
+$ff-base: "Zen Kaku Gothic New", "Meiryo", "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans", sans-serif; // 日本語標準
 $fz-base: 16px; // ベースフォントサイズ
 $fw-base: 500; // ベースフォントウェイト
 $lh-base: 1.6; // ベース行間
 $hover-base: 0.7; // ベース行間
 
-
 $sp-maxwidth: 480px; // spサイズ
 $tab-minwidth: 768px; // tabサイズ
 $pc-minwidth: 1100px; // pcサイズ
-
 
 // ブレークポイント
 $breakpoints: (
   // スマホ以下の場合
   "sp": "screen and (max-width: #{$sp-maxwidth - 1px})",
   // タブレット以上の場合
-  "tab": "screen and (min-width: #{$tab-minwidth}) and (max-width: #{$pc-minwidth - 1px})",
+  "tab":
+    "screen and (min-width: #{$tab-minwidth}) and (max-width: #{$pc-minwidth - 1px})",
   // pc以上の場合
-  "pc": "screen and (min-width: #{$pc-minwidth})",
+  "pc": "screen and (min-width: #{$pc-minwidth})"
 );
 
 // 重なり順の定義

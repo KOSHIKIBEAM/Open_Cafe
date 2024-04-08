@@ -16,7 +16,6 @@
             <img class="u-hidden-tab u-hidden-pc" src="<?php echo get_template_directory_uri(); ?>/img/01-(sp)/img_mainvisual3_sp.jpg" alt="">
         </div>
     </div>
-    <?php get_template_part('template-parts/pickup_by_tag'); ?>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
